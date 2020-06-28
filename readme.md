@@ -1,4 +1,4 @@
-# Sistema de Reservas de Ambientes
+## Sistema de Reservas de Laboratorios
 
 ## Requerimientos
 
@@ -8,40 +8,22 @@ Si se desea instalar este sistema se tiene los siguientes requisitos:
 - Composer
 - Git
 - Nodejs
+- Xampp
 
 ## Pasos de instalacion
 
 1.- Clonar el proyecto con git
 
-`git clone https://github.com/casiprogramador/reserva-ambientes.git`
+`git clone https://github.com/SebastianUCM/Proyecto_Software.git`
 
-2.- Instalar las dependecias de Laravel con composer
+2.- Ejecutar las dependencias de Vue.js con npm
 
-`composer install`
+`npm run watch`
 
-3.-Instalar las dependencias de Vue.js con npm
+3.- Crear una base de datos vacia con el administrador de mysql con el nombre de "reserva-ambientes"
 
-`npm install`
-
-4.- Mover la carpeta "v-calendar-scheduler" que se encuentra en la raiz y remplazarla en "node_modules"
-
-5.- Renombrar el archivo .env.example a .env y configurar los accesos a la base de datos
-
-	DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=reserva-ambientes
-    DB_USERNAME=root
-    DB_PASSWORD=
-
-6.- Generar la estructura de la base de datos
-
-`php artisan migrate`
-
-7.- Generar la llave de seguridad de laravel
-
-`php artisan key:generate`
-
-8.- Generar la llave JWT
-
-`php artisan jwt:secret`
+## Universidad Catolica del Maule
+## Ingenieria Civil Informatica
+## Ingenieria de Software I
+## Sebastian Cerpa Gutierrez
+## Sebastian Fuenzalida Vera
