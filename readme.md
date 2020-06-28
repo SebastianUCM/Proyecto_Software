@@ -1,4 +1,4 @@
-## Sistema de Reservas de Laboratorios
+# Sistema de Reservas de Laboratorios
 
 ## Requerimientos
 
@@ -22,7 +22,7 @@ Si se desea instalar este sistema se tiene los siguientes requisitos:
 
 3.- Crear una base de datos vacia con el administrador de mysql con el nombre de "reserva-ambientes"
 
-## Universidad Catolica del Maule
+# Universidad Catolica del Maule
 ## Ingenieria Civil Informatica
 ## Ingenieria de Software I
 ## Sebastian Cerpa Gutierrez
