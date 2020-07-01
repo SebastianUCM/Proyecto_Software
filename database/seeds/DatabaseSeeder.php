@@ -20,6 +20,5 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ColorSeeder::class);
         $this->call(CarreraSeeder::class);
-        $this->call(FacultadSeeder::class);
     }
 }
