@@ -2357,13 +2357,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       loggin: false,
       listaAmbientes: null,
       dialogEdit: false,
+      deleteDialog: false,
       editAmbiente: null,
+      to: null,
+      showDialog: false,
       classEditModal: {
         headline: 'headline',
         colorFondo: 'blue',
@@ -2447,6 +2463,23 @@ __webpack_require__.r(__webpack_exports__);
         _this4.dialogEdit = false;
       }).catch(function (error) {
         _this4.errors = error.response.data.errors;
+      });
+    },
+    Eliminar: function Eliminar() {
+      var _this5 = this;
+
+      axios.request({
+        url: "/api/ambiente/".concat(this.editAmbiente.id),
+        method: "delete",
+        headers: {
+          Authorization: "Bearer ".concat(localStorage.getItem("token"))
+        }
+      }).then(function (res) {
+        _this5.obtenerAmbientes();
+
+        _this5.dialogEdit = false;
+      }).catch(function (error) {
+        alert('Error!, no se puede eliminar');
       });
     }
   }
@@ -60068,6 +60101,86 @@ var render = function() {
                 "v-card-actions",
                 [
                   _c("v-spacer"),
+                  _vm._v(" "),
+                  _c(
+                    "v-btn",
+                    {
+                      on: {
+                        click: function($event) {
+                          _vm.deleteDialog = true
+                        }
+                      }
+                    },
+                    [_vm._v("Eliminar")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-dialog",
+                    {
+                      attrs: { "max-width": "500px" },
+                      model: {
+                        value: _vm.deleteDialog,
+                        callback: function($$v) {
+                          _vm.deleteDialog = $$v
+                        },
+                        expression: "deleteDialog"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-card",
+                        [
+                          _c(
+                            "v-card-title",
+                            { staticStyle: { "font-size": "20px" } },
+                            [
+                              _vm._v(
+                                "¿Está seguro que desea eliminar el laboratorio?.\n             Las reservas realizadas anteriormente se perderán y no se podrán recuperar."
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-card-actions",
+                            [
+                              _c("v-spacer"),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticStyle: { "font-size": "15px" },
+                                  attrs: { color: "red", flat: "" },
+                                  nativeOn: {
+                                    click: function($event) {
+                                      _vm.deleteDialog = false
+                                    }
+                                  }
+                                },
+                                [_vm._v("No")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-btn",
+                                {
+                                  staticStyle: { "font-size": "15px" },
+                                  attrs: { color: "green", flat: "" },
+                                  nativeOn: {
+                                    click: function($event) {
+                                      return _vm.Eliminar($event)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Si")]
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
                   _c(
                     "v-btn",
