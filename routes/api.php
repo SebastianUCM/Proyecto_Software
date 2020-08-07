@@ -27,6 +27,12 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
+
+//Metodo Delete Usuario ya que no viene incluido
+
+Route::delete('usuario/{id}', 'AuthController@destroy')->name('usuario.destroy');
+
+
 Route::get('/usuario', 'AuthController@getUsers');
 Route::get('/reserva/{id_ambiente}/ambiente/{mes}/mes', 'ReservaController@reservasByAmbiente');
 //reservasByAmbiente

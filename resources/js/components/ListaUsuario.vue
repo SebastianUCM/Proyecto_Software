@@ -68,12 +68,16 @@
             <v-spacer></v-spacer>
             <v-btn color="blue darken-1" flat @click="dialog=false">Cancelar</v-btn>
             <v-btn color="blue darken-1" flat @click="actualizar">Actualizar</v-btn>
+            <v-btn color="red" flat @click="Eliminar">Eliminar Usuario</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
 <!-- Fin Dialog -->
       <v-btn color="primary" dark @click="registrarUsuario">
         Nuevo Usuario
+      </v-btn>
+      <v-btn color="primary" dark @click="EliminarUsuario">
+        Eliminar Usuario
       </v-btn>
     </v-toolbar>
     <v-data-table
@@ -123,7 +127,7 @@
         { text: 'Rol', value: 'rol' },
         { text: 'Estado', value: 'habilitado' },
         { text: 'Ultima Actualizacion', value: 'created_at' },
-        { text: 'Opciones', value: 'name', sortable: false }
+        { text: 'Modificar', value: 'name', sortable: false }
       ],
       roles: [
             {
@@ -176,6 +180,11 @@
       registrarUsuario(){
           this.$router.push({ path: 'registrar-usuario' }) 
       },
+
+      EliminarUsuario(){
+        this.$router.push({ path: 'eliminacion' })
+
+      },
       actualizar(){
 
         console.log(this.editedItem)
@@ -189,9 +198,12 @@
               this.errors = error.response.data.errors
             })
       },
+
+
       cambiarEstadoPassword(){
         this.password_enable = this.editedItem.password_enabled
       }
     }
+
   }
 </script>
