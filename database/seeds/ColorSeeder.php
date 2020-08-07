@@ -45,8 +45,8 @@ class ColorSeeder extends Seeder
             'nombre' => 'Naranjo',
         ]);
         DB::table('colors')->insert([
-            'codigo' => 'gray',
-            'nombre' => 'Plomo',
+            'codigo' => 'grey',
+            'nombre' => 'Gris',
         ]);
     }
 }
