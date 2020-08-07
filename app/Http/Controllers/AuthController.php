@@ -125,16 +125,16 @@ class AuthController extends Controller
                 'status'=>'1',
                 'msg'=>'success'
             ];
-        
         }else{
-        
             $data=[
                 'status'=>'0',
                 'msg'=>'fail'
-            ];
-        
-        }
 
-        return response()->json($data, 200);
+            ];
+        }
+        return response()->json($data,200);
+
+
+
     }
 }
